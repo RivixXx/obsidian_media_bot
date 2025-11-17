@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 RUN apk add --no-cache bash
 
 COPY package*.json ./
-RUN npm ci --production
+RUN npm install --omit=dev --no-audit --no-fund
 
 COPY . .
 
